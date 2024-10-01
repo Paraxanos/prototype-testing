@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Wellness Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #50b3a2;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        #showcase {
+            min-height: 400px;
+            background: url('path/to/chakra-meditation-image.jpg') no-repeat center center/cover;
+            text-align: center;
+            color: #ffffff;
+        }
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        #showcase p {
+            font-size: 20px;
+        }
+        #features {
+            margin-top: 20px;
+        }
+        .feature-box {
+            float: left;
+            width: 30%;
+            padding: 10px;
+            text-align: center;
+        }
+        #chatbot {
+            clear: both;
+            padding: 20px;
+            margin-top: 20px;
+            background: #ffffff;
+            border-radius: 5px;
+        }
+        #chatbot h2 {
+            text-align: center;
+        }
+        #chat-messages {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #chat-input {
+            width: 80%;
+            padding: 10px;
+        }
+        #chat-submit {
+            width: 18%;
+            padding: 10px;
+            background: #50b3a2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">AI</span> Wellness Platform</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#chatbot">AI Chatbot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Your Personal AI Wellness Coach</h1>
+            <p>Personalized breathing exercises, meditation sessions, sleep tracking, and more!</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="feature-box">
+                <h3>Breathing Exercises</h3>
+                <p>AI-personalized breathing techniques to reduce stress and improve focus.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Meditation Sessions</h3>
+                <p>Guided meditations tailored to your needs and preferences.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Sleep & Diet Tracking</h3>
+                <p>Monitor your sleep cycles and diet for optimal health and wellness.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="chatbot">
+        <div class="container">
+            <h2>AI Therapy Chatbot</h2>
+            <div id="chat-messages"></div>
+            <input type="text" id="chat-input" placeholder="Type your message here...">
+            <button id="chat-submit">Send</button>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('chat-submit').addEventListener('click', function() {
+            var input = document.getElementById('chat-input');
+            var message = input.value;
+            if (message.trim() !== '') {
+                var chatMessages = document.getElementById('chat-messages');
+                chatMessages.innerHTML += '<p><strong>You:</strong> ' + message + '</p>';
+                input.value = '';
+                
+                // Updated AI response
+                setTimeout(function() {
+                    chatMessages.innerHTML += '<p><strong>AI:</strong> Hi! I am happy to help!</p>';
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
